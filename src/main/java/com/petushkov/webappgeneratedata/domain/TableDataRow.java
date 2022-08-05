@@ -6,35 +6,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class TableData {
+public class TableDataRow {
 
-    private List<Long> indexes = new ArrayList<>();
+    private long index;
 
-    private List<Long> identifiers = new ArrayList<>();
+    private String identifier;
 
-    private List<String> fullNames = new ArrayList<>();
+    private String fullName;
 
-    private List<String> addresses = new ArrayList<>();
+    private String address;
 
-    private List<String> phones = new ArrayList<>();
+    private String phone;
 
-    public void addIndex(Long index) {
-        this.indexes.add(index);
-    }
+//    private List<Long> indexes = new ArrayList<>();
+//
+//    private List<Long> identifiers = new ArrayList<>();
+//
+//    private List<String> fullNames = new ArrayList<>();
+//
+//    private List<String> addresses = new ArrayList<>();
+//
+//    private List<String> phones = new ArrayList<>();
 
-    public void addIdentifier(Long identifier) {
-        this.identifiers.add(identifier);
-    }
-
-    public void addFullName(String fullName) {
-        this.fullNames.add(fullName);
-    }
-
-    public void addAddress(String address) {
-        this.addresses.add(address);
-    }
-
-    public void addPhone(String phone) {
-        this.phones.add(phone);
-    }
+//    public void addIndex(Long index) {
+//        this.indexes.add(index);
+//    }
+//
+//    public void addIdentifier(Long identifier) {
+//        this.identifiers.add(identifier);
+//    }
+//
+//    public void addFullName(String fullName) {
+//        this.fullNames.add(fullName);
+//    }
+//
+//    public void addAddress(String address) {
+//        this.addresses.add(address);
+//    }
+//
+//    public void addPhone(String phone) {
+//        this.phones.add(phone);
+//    }
 }
