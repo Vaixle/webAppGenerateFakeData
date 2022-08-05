@@ -53,7 +53,7 @@ public class TableController {
             row = addErrors(row, random, erorrCount);
 
             if(String.valueOf(erorrCount).split("\\.")[1].equals("5")) {
-                row = generateRandomIntIntRange(0,2, random) == 1 ? addErrors(row, random, 1) : row;
+                row = generateRandomIntIntRange(2, random) == 1 ? addErrors(row, random, 1) : row;
             }
             table.add(row);
         }
@@ -97,7 +97,7 @@ public class TableController {
 
             int whichError = getWhichErrorOccur(random);
 
-            switch (errorsFields.get(i)) {
+            switch (whichError) {
                 case 0:
                     errorField = deleteOneSymbol(errorField, random);
                     break;
@@ -138,7 +138,7 @@ public class TableController {
         List<Integer> fields  = new ArrayList<>();
 
         for (int i = 0; i < errorCount; i++) {
-            fields.add(generateRandomIntIntRange(0, 4 ,random));
+            fields.add(generateRandomIntIntRange( 4 ,random));
         }
 
         return fields;
@@ -147,7 +147,7 @@ public class TableController {
 
     public static int getWhichErrorOccur(Random random) {
 
-        return generateRandomIntIntRange(0, 3 ,random);
+        return generateRandomIntIntRange( 3 ,random);
     }
 
 
@@ -157,7 +157,7 @@ public class TableController {
         if(tableField.length() == 1)
             return tableField;
 
-        int symbolDeleteNumber = generateRandomIntIntRange(0, tableField.length(), random);
+        int symbolDeleteNumber = generateRandomIntIntRange(tableField.length(), random);
 
         return new StringBuffer(tableField).deleteCharAt(symbolDeleteNumber).toString();
     }
@@ -168,7 +168,7 @@ public class TableController {
         if(tableField.isEmpty())
             return "";
 
-        int symbolAddNumber = generateRandomIntIntRange(0, tableField.length(), random);
+        int symbolAddNumber = generateRandomIntIntRange(tableField.length(), random);
          StringBuffer myString = new StringBuffer(tableField);
          char chosenChar = myString.charAt(symbolAddNumber);
 
@@ -181,7 +181,7 @@ public class TableController {
         if(tableField.length() == 1)
             return tableField;
 
-        int symbolAddNumber = generateRandomIntIntRange(0, tableField.length(), random);
+        int symbolAddNumber = generateRandomIntIntRange(tableField.length(), random);
         StringBuffer myString = new StringBuffer(tableField);
 
         char chosenChar = myString.charAt(symbolAddNumber);
@@ -199,7 +199,7 @@ public class TableController {
 
 
 
-    public static int generateRandomIntIntRange(int min, int max, Random random) {
+    public static int generateRandomIntIntRange(int max, Random random) {
         return random.nextInt(max);
     }
 
